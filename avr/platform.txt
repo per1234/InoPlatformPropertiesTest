@@ -34,7 +34,8 @@ compiler.objcopy.eep.flags=-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,
 compiler.elf2hex.flags=-O ihex -R .eeprom
 compiler.elf2hex.cmd=avr-objcopy
 compiler.ldflags=
-compiler.size.cmd=avr-size
+#compiler.size.cmd=avr-size
+compiler.size.cmd={runtime.platform.path}\asdf.bat
 
 # This can be overridden in boards.txt
 build.extra_flags=
