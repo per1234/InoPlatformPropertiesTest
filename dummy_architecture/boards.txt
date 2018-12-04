@@ -1,3 +1,5 @@
+menu.dummy_preferences_property=Dummy Menu
+
 dummy_board.name=PlatformPropertiesTest
 
 dummy_board.upload.tool=dummy_tool
@@ -9,3 +11,6 @@ dummy_board.build.board=DUMMY_ARCHITECTURE_DUMMY_BOARD
 
 dummy_board.dummy_boards_property=dummy_boards_property_value
 dummy_board.dummy_override_property=dummy_override_property_value_boards
+
+# this creates a preferences.txt property with a meaningful name
+dummy_board.menu.dummy_preferences_property.dummy_preferences_property_value=Dummy Menu Item
