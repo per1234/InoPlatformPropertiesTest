@@ -14,7 +14,7 @@ It can be very difficult to understand the interaction between the compilation a
 ## Usage
 - Tools > Board > InoPlatformPropertiesTest
 - Tools > Programmer > InoPlatformPropertiesTest
-- File > Examples > DummyLibrary > DummyExample
+- File > Examples > InoPlatformPropertiesTest > DummyExample
 - File > Preferences > Show verbose output during: > compilation (check) > upload (check) > OK
 - Run the process you want to study:
   - Sketch > Verify/Compile
