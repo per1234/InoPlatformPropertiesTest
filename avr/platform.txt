@@ -8,33 +8,33 @@ name=PlatformPropertiesTest
 version=0.0.0
 
 
-# Properties defined in platform.txt are only accessible in tool recipes if prepended by the tool name. In order to use the same properties for both the compilation recipes and upload recipes, the compilation recipes use the full property name (e.g. tools.dummytool.dummy.cmd) while the tool uses the shortened property name (e.g. dummy.cmd)
-tools.dummytool.dummy.cmd={runtime.platform.path}\asdf.bat
-tools.dummytool.properties_list      ={runtime.platform.path} runtime.hardware.path={runtime.hardware.path} runtime.ide.path={runtime.ide.path} runtime.ide.version={runtime.ide.version} ide_version={ide_version} runtime.os={runtime.os} build.path={build.path} build.project_name={build.project_name} build.arch={build.arch} includes={includes} source_file={source_file} object_file={object_file} archive_file_path={archive_file_path} archive_file={archive_file} object_files={object_files} preprocessed_file_path={preprocessed_file_path} sketch_path={sketch_path} upload.verbose={upload.verbose} upload.verify={upload.verify} serial.port={serial.port} program.verbose={program.verbose} program.verify={program.verify} program.extra_params={program.extra_params} erase.verbose={erase.verbose} bootloader.verbose={bootloader.verbose} upload.network.port={upload.network.port} upload.network.endpoint_upload={upload.network.endpoint_upload} upload.network.endpoint_sync={upload.network.endpoint_sync} upload.network.endpoint_reset={upload.network.endpoint_reset} upload.network.sync_return={upload.network.sync_return} dummy_programmer_property={dummy_programmer_property}
+# Properties defined in platform.txt are only accessible in tool recipes if prepended by the tool name. In order to use the same properties for both the compilation recipes and upload recipes, the compilation recipes use the full property name (e.g. tools.dummy_tool.dummy.cmd) while the tool uses the shortened property name (e.g. dummy.cmd)
+tools.dummy_tool.dummy.cmd={runtime.platform.path}\asdf.bat
+tools.dummy_tool.properties_list      ={runtime.platform.path} runtime.hardware.path={runtime.hardware.path} runtime.ide.path={runtime.ide.path} runtime.ide.version={runtime.ide.version} ide_version={ide_version} runtime.os={runtime.os} build.path={build.path} build.project_name={build.project_name} build.arch={build.arch} includes={includes} source_file={source_file} object_file={object_file} archive_file_path={archive_file_path} archive_file={archive_file} object_files={object_files} preprocessed_file_path={preprocessed_file_path} sketch_path={sketch_path} upload.verbose={upload.verbose} upload.verify={upload.verify} serial.port={serial.port} program.verbose={program.verbose} program.verify={program.verify} program.extra_params={program.extra_params} erase.verbose={erase.verbose} bootloader.verbose={bootloader.verbose} upload.network.port={upload.network.port} upload.network.endpoint_upload={upload.network.endpoint_upload} upload.network.endpoint_sync={upload.network.endpoint_sync} upload.network.endpoint_reset={upload.network.endpoint_reset} upload.network.sync_return={upload.network.sync_return} dummy_programmer_property={dummy_programmer_property}
 
 
-recipe.hooks.sketch.prebuild.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.sketch.prebuild.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.sketch.postbuild.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.sketch.postbuild.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.libraries.prebuild.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.libraries.prebuild.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.libraries.postbuild.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.libraries.postbuild.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.core.prebuild.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.core.prebuild.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.core.postbuild.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.core.postbuild.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.linking.prelink.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.linking.prelink.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.linking.postlink.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.linking.postlink.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.objcopy.preobjcopy.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.objcopy.preobjcopy.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.objcopy.postobjcopy.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.objcopy.postobjcopy.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.savehex.presavehex.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.savehex.presavehex.1.pattern {tools.dummytool.properties_list}
-recipe.hooks.savehex.postsavehex.1.pattern={tools.dummytool.dummy.cmd} recipe=recipe.hooks.savehex.postsavehex.1.pattern {tools.dummytool.properties_list}
-recipe.c.o.pattern={tools.dummytool.dummy.cmd} recipe=recipe.c.o.pattern {tools.dummytool.properties_list}
-recipe.cpp.o.pattern={tools.dummytool.dummy.cmd} recipe=recipe.cpp.o.pattern {tools.dummytool.properties_list}
-recipe.S.o.pattern={tools.dummytool.dummy.cmd} recipe=recipe.S.o.pattern {tools.dummytool.properties_list}
-recipe.ar.pattern={tools.dummytool.dummy.cmd} recipe=recipe.ar.pattern {tools.dummytool.properties_list}
-recipe.c.combine.pattern={tools.dummytool.dummy.cmd} recipe=recipe.c.combine.pattern {tools.dummytool.properties_list}
-recipe.objcopy.eep.pattern={tools.dummytool.dummy.cmd} recipe=recipe.objcopy.eep.pattern {tools.dummytool.properties_list}
-recipe.objcopy.hex.pattern={tools.dummytool.dummy.cmd} recipe=recipe.objcopy.hex.pattern {tools.dummytool.properties_list}
-recipe.size.pattern={tools.dummytool.dummy.cmd} recipe=recipe.size.pattern {tools.dummytool.properties_list}
-recipe.preproc.includes={tools.dummytool.dummy.cmd} recipe=recipe.preproc.includes {tools.dummytool.properties_list}
-#recipe.preproc.macros={tools.dummytool.dummy.cmd} recipe=recipe.preproc.macros {tools.dummytool.properties_list}
+recipe.hooks.sketch.prebuild.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.sketch.prebuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.sketch.postbuild.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.sketch.postbuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.libraries.prebuild.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.libraries.prebuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.libraries.postbuild.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.libraries.postbuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.core.prebuild.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.core.prebuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.core.postbuild.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.core.postbuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.linking.prelink.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.linking.prelink.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.linking.postlink.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.linking.postlink.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.objcopy.preobjcopy.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.objcopy.preobjcopy.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.objcopy.postobjcopy.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.objcopy.postobjcopy.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.savehex.presavehex.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.savehex.presavehex.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.savehex.postsavehex.1.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.hooks.savehex.postsavehex.1.pattern {tools.dummy_tool.properties_list}
+recipe.c.o.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.c.o.pattern {tools.dummy_tool.properties_list}
+recipe.cpp.o.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.cpp.o.pattern {tools.dummy_tool.properties_list}
+recipe.S.o.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.S.o.pattern {tools.dummy_tool.properties_list}
+recipe.ar.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.ar.pattern {tools.dummy_tool.properties_list}
+recipe.c.combine.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.c.combine.pattern {tools.dummy_tool.properties_list}
+recipe.objcopy.eep.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.objcopy.eep.pattern {tools.dummy_tool.properties_list}
+recipe.objcopy.hex.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.objcopy.hex.pattern {tools.dummy_tool.properties_list}
+recipe.size.pattern={tools.dummy_tool.dummy.cmd} recipe=recipe.size.pattern {tools.dummy_tool.properties_list}
+recipe.preproc.includes={tools.dummy_tool.dummy.cmd} recipe=recipe.preproc.includes {tools.dummy_tool.properties_list}
+#recipe.preproc.macros={tools.dummy_tool.dummy.cmd} recipe=recipe.preproc.macros {tools.dummy_tool.properties_list}
 
 
 # The dummy recipe.preproc.macros above causes compilation to fail on IDE versions previous to 1.9.0-beta so the stock recipe below must be used for those versions
@@ -54,26 +54,26 @@ recipe.size.regex.data=^(?:\.data|\.bss|\.noinit)\s+([0-9]+).*
 recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 
 
-tools.dummytool.network_cmd={dummy.cmd} recipe=tools.dummytool.network_cmd {properties_list}
+tools.dummy_tool.network_cmd={dummy.cmd} recipe=tools.dummy_tool.network_cmd {properties_list}
 
-tools.dummytool.upload.params.verbose=upload_verbose_verbose_option
-tools.dummytool.upload.params.quiet=upload_verbose_quiet_option
-tools.dummytool.upload.params.noverify=upload_verify_noverify_option
-tools.dummytool.upload.pattern={dummy.cmd} recipe=tools.dummytool.upload.pattern {properties_list}
+tools.dummy_tool.upload.params.verbose=upload_verbose_verbose_option
+tools.dummy_tool.upload.params.quiet=upload_verbose_quiet_option
+tools.dummy_tool.upload.params.noverify=upload_verify_noverify_option
+tools.dummy_tool.upload.pattern={dummy.cmd} recipe=tools.dummy_tool.upload.pattern {properties_list}
 
-tools.dummytool.program.params.verbose=program_verbose_verbose_option
-tools.dummytool.program.params.quiet=program_verbose_quiet_option
-tools.dummytool.program.params.noverify=program_verify_verify_option
-tools.dummytool.program.pattern={dummy.cmd} recipe=tools.dummytool.program.pattern {properties_list}
+tools.dummy_tool.program.params.verbose=program_verbose_verbose_option
+tools.dummy_tool.program.params.quiet=program_verbose_quiet_option
+tools.dummy_tool.program.params.noverify=program_verify_verify_option
+tools.dummy_tool.program.pattern={dummy.cmd} recipe=tools.dummy_tool.program.pattern {properties_list}
 
-tools.dummytool.erase.params.verbose=erase_verbose_verbose_option
-tools.dummytool.erase.params.quiet=erase_verbose_quiet_option
-tools.dummytool.erase.pattern={dummy.cmd} recipe=tools.dummytool.erase.pattern {properties_list}
+tools.dummy_tool.erase.params.verbose=erase_verbose_verbose_option
+tools.dummy_tool.erase.params.quiet=erase_verbose_quiet_option
+tools.dummy_tool.erase.pattern={dummy.cmd} recipe=tools.dummy_tool.erase.pattern {properties_list}
 
-tools.dummytool.bootloader.params.verbose=bootloader_verbose_verbose_option
-tools.dummytool.bootloader.params.quiet=bootloader_verbose_quiet_option
-tools.dummytool.bootloader.pattern={dummy.cmd} recipe=tools.dummytool.bootloader.pattern {properties_list}
+tools.dummy_tool.bootloader.params.verbose=bootloader_verbose_verbose_option
+tools.dummy_tool.bootloader.params.quiet=bootloader_verbose_quiet_option
+tools.dummy_tool.bootloader.pattern={dummy.cmd} recipe=tools.dummy_tool.bootloader.pattern {properties_list}
 
-tools.dummytool_remote.upload.pattern={dummy.cmd} recipe=tools.dummytool_remote.upload.pattern {properties_list}
+tools.dummy_tool_remote.upload.pattern={dummy.cmd} recipe=tools.dummy_tool_remote.upload.pattern {properties_list}
 
-tools.dummytool.upload.network_pattern={dummy.cmd} recipe=tools.dummytool.upload.network_pattern {properties_list}
+tools.dummy_tool.upload.network_pattern={dummy.cmd} recipe=tools.dummy_tool.upload.network_pattern {properties_list}
