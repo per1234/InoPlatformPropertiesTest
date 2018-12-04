@@ -1,0 +1,2 @@
+dummy_platform_property=dummy_platform_local_property_local_value
+tools.dummy_tool.dummy_tool_local_property=dummy_tool_local_property_value

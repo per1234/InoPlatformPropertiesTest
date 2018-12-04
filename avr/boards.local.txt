@@ -1,0 +1,1 @@
+PlatformPropertiesTest.dummy_boards_local_property=dummy_boards_local_property_value
