@@ -9,3 +9,5 @@ PlatformPropertiesTest.build.f_cpu=16000000L
 PlatformPropertiesTest.build.board=AVR_UNO
 PlatformPropertiesTest.build.core=arduino:arduino
 PlatformPropertiesTest.build.variant=arduino:standard
+
+PlatformPropertiesTest.dummy_boards_property=dummy_boards_property_value
