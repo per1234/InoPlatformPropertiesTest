@@ -1,14 +1,14 @@
-PlatformPropertiesTest.name=PlatformPropertiesTest
+dummy_board.name=PlatformPropertiesTest
 
-PlatformPropertiesTest.upload.tool=dummy_tool
+dummy_board.upload.tool=dummy_tool
 
-PlatformPropertiesTest.bootloader.tool=dummy_tool
+dummy_board.bootloader.tool=dummy_tool
 
-PlatformPropertiesTest.build.mcu=atmega328p
-PlatformPropertiesTest.build.f_cpu=16000000L
-PlatformPropertiesTest.build.board=AVR_UNO
-PlatformPropertiesTest.build.core=arduino:arduino
-PlatformPropertiesTest.build.variant=arduino:standard
+dummy_board.build.mcu=atmega328p
+dummy_board.build.f_cpu=16000000L
+dummy_board.build.board=AVR_UNO
+dummy_board.build.core=arduino:arduino
+dummy_board.build.variant=arduino:standard
 
-PlatformPropertiesTest.dummy_boards_property=dummy_boards_property_value
-PlatformPropertiesTest.dummy_override_property=dummy_override_property_value_boards
+dummy_board.dummy_boards_property=dummy_boards_property_value
+dummy_board.dummy_override_property=dummy_override_property_value_boards
