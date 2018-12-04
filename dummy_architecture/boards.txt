@@ -4,8 +4,7 @@ dummy_board.upload.tool=dummy_tool
 
 dummy_board.bootloader.tool=dummy_tool
 
-dummy_board.build.core=arduino:arduino
-dummy_board.build.variant=arduino:standard
+dummy_board.build.core=dummy_core
 
 dummy_board.dummy_boards_property=dummy_boards_property_value
 dummy_board.dummy_override_property=dummy_override_property_value_boards
