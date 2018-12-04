@@ -1,7 +1,5 @@
 # The purpose of this file is to demonstrate which properties are defined in each recipe and also where the hook recipes are called
 # The dummy recipe.preproc.macros causes compilation to fail on IDE versions previous to 1.9.0-beta so the stock recipe must be used for those versions
-# The output can be cleaned by doing a replace of:
-# GNU size (GNU Binutils) 2.26.20160125\n\nCopyright (C) 2015 Free Software Foundation, Inc.\n\nThis program is free software; you may redistribute it under the terms of\n\nthe GNU General Public License version 3 or (at your option) any later version.\n\nThis program has absolutely no warranty.\n\n
 
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
