@@ -12,6 +12,9 @@ dummy_platform_property=dummy_platform_property_value
 tools.dummy_tool.dummy_tool_property=dummy_tool_property_value
 dummy_override_property=dummy_override_property_value_platform
 
+dummy_preproc_macros_command={runtime.platform.path}/dummy_preproc_macros_command.sh
+dummy_preproc_macros_command.windows={runtime.platform.path}/dummy_preproc_macros_command.bat
+
 # Properties defined in platform.txt are only accessible in tool recipes if prepended by the tool name. In order to use the same properties for both the compilation recipes and upload recipes, the compilation recipes use the full property name (e.g. tools.dummy_tool.dummy_cmd) while the tool uses the shortened property name (e.g. dummy_cmd)
 tools.dummy_tool.dummy_cmd=={runtime.platform.path}/dummy_program.sh
 tools.dummy_tool.dummy_cmd.windows={runtime.platform.path}/dummy_program.bat
@@ -40,17 +43,8 @@ recipe.objcopy.eep.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.objcopy.
 recipe.objcopy.hex.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.objcopy.hex.pattern {tools.dummy_tool.properties_list}
 recipe.size.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.size.pattern {tools.dummy_tool.properties_list}
 recipe.preproc.includes="{tools.dummy_tool.dummy_cmd}" recipe=recipe.preproc.includes {tools.dummy_tool.properties_list}
-#recipe.preproc.macros="{tools.dummy_tool.dummy_cmd}" recipe=recipe.preproc.macros {tools.dummy_tool.properties_list}
+recipe.preproc.macros="{dummy_preproc_macros_command}" "{build.path}/preproc/ctags_target_for_gcc_minus_e.cpp" recipe=recipe.preproc.macros {tools.dummy_tool.properties_list}
 
-
-# The dummy recipe.preproc.macros above causes compilation to fail on IDE versions previous to 1.9.0-beta so the stock recipe below must be used for those versions
-compiler.path={runtime.tools.avr-gcc.path}/bin/
-compiler.cpp.cmd=avr-g++
-compiler.cpp.flags=-c -g -Os {compiler.warning_flags} -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD -flto
-preproc.macros.flags=-w -x c++ -E -CC
-compiler.cpp.extra_flags=
-build.extra_flags=
-recipe.preproc.macros="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {preproc.macros.flags} -mmcu={build.mcu} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{preprocessed_file_path}"
 
 recipe.output.tmp_file={build.project_name}.hex
 recipe.output.save_file={build.project_name}.{build.variant}.hex

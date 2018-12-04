@@ -4,9 +4,6 @@ dummy_board.upload.tool=dummy_tool
 
 dummy_board.bootloader.tool=dummy_tool
 
-dummy_board.build.mcu=atmega328p
-dummy_board.build.f_cpu=16000000L
-dummy_board.build.board=AVR_UNO
 dummy_board.build.core=arduino:arduino
 dummy_board.build.variant=arduino:standard
 
