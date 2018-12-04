@@ -11,3 +11,4 @@ PlatformPropertiesTest.build.core=arduino:arduino
 PlatformPropertiesTest.build.variant=arduino:standard
 
 PlatformPropertiesTest.dummy_boards_property=dummy_boards_property_value
+PlatformPropertiesTest.dummy_override_property=dummy_override_property_value_boards

@@ -1,3 +1,4 @@
 dummy_programmer.name=PlatformPropertiesTest
 dummy_programmer.program.tool=dummy_tool
 dummy_programmer.dummy_programmer_property=dummy_programmer_property_value
+dummy_programmer.dummy_override_property=dummy_override_property_value_programmers
