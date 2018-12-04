@@ -1,6 +1,6 @@
 menu.dummy_preferences_property=Dummy Menu
 
-dummy_board.name=PlatformPropertiesTest
+dummy_board.name=InoPlatformPropertiesTest
 
 dummy_board.upload.tool=dummy_tool
 
