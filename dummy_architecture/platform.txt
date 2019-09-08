@@ -43,7 +43,7 @@ recipe.objcopy.eep.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.objcopy.
 recipe.objcopy.hex.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.objcopy.hex.pattern {tools.dummy_tool.properties_list}
 recipe.size.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.size.pattern {tools.dummy_tool.properties_list}
 recipe.preproc.includes="{tools.dummy_tool.dummy_cmd}" recipe=recipe.preproc.includes {tools.dummy_tool.properties_list}
-recipe.preproc.macros="{dummy_preproc_macros_command}" "{build.path}/preproc/ctags_target_for_gcc_minus_e.cpp" recipe=recipe.preproc.macros {tools.dummy_tool.properties_list}
+recipe.preproc.macros="{dummy_preproc_macros_command}" "{build.path}/preproc" "ctags_target_for_gcc_minus_e.cpp" recipe=recipe.preproc.macros {tools.dummy_tool.properties_list}
 
 
 recipe.output.tmp_file={build.project_name}.hex

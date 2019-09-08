@@ -1,1 +1,2 @@
-# Intentionally left empty so that the recipes in platform.txt have a command to run that will not error
+#!/bin/bash
+# A dummy executable to give the compiler recipes in platform.txt something to run
