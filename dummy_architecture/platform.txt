@@ -12,7 +12,8 @@ dummy_platform_property=dummy_platform_property_value
 tools.dummy_tool.dummy_tool_property=dummy_tool_property_value
 dummy_override_property=dummy_override_property_value_platform
 
-scripts.path={runtime.platform.path}/scripts
+tools.dummy_tool.scripts.path={runtime.platform.path}/scripts
+scripts.path={tools.dummy_tool.scripts.path}
 
 dummy_preproc_macros_command={scripts.path}/dummy_preproc_macros_command.sh
 dummy_preproc_macros_command.windows={scripts.path}/dummy_preproc_macros_command.bat
