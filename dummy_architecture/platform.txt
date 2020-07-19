@@ -12,42 +12,43 @@ dummy_platform_property=dummy_platform_property_value
 tools.dummy_tool.dummy_tool_property=dummy_tool_property_value
 dummy_override_property=dummy_override_property_value_platform
 
+# Properties defined in platform.txt are only accessible in tool recipes if prepended by the tool name, thus the matched definitions of each of the properties used by both the compilation recipe and tool patterns.
 tools.dummy_tool.scripts.path={runtime.platform.path}/scripts
 scripts.path={tools.dummy_tool.scripts.path}
 
 dummy_preproc_macros_command={scripts.path}/dummy_preproc_macros_command.sh
 dummy_preproc_macros_command.windows={scripts.path}/dummy_preproc_macros_command.bat
 
-# Properties defined in platform.txt are only accessible in tool recipes if prepended by the tool name. In order to use the same properties for both the compilation recipes and upload recipes, the compilation recipes use the full property name (e.g. tools.dummy_tool.dummy_cmd) while the tool uses the shortened property name (e.g. dummy_cmd)
 tools.dummy_tool.dummy_cmd={scripts.path}/dummy_program.sh
 tools.dummy_tool.dummy_cmd.windows={scripts.path}/dummy_program.bat
+dummy_cmd={tools.dummy_tool.dummy_cmd}
 
 # This default definition is required for precompiled library support. It will be overridden by the builder when compiling a precompiled library.
 compiler.libraries.ldflags=
 
 tools.dummy_tool.properties_list=runtime.platform.path={runtime.platform.path} runtime.hardware.path={runtime.hardware.path} runtime.ide.path={runtime.ide.path} runtime.ide.version={runtime.ide.version} ide_version={ide_version} runtime.os={runtime.os} build.path={build.path} build.project_name={build.project_name} build.arch={build.arch} includes={includes} source_file={source_file} object_file={object_file} archive_file_path={archive_file_path} archive_file={archive_file} object_files={object_files} preprocessed_file_path={preprocessed_file_path} sketch_path={sketch_path} compiler.ldflags={compiler.ldflags} compiler.libraries.ldflags={compiler.libraries.ldflags} upload.verbose={upload.verbose} upload.verify={upload.verify} serial.port={serial.port} program.verbose={program.verbose} program.verify={program.verify} program.extra_params={program.extra_params} erase.verbose={erase.verbose} bootloader.verbose={bootloader.verbose} upload.network.port={upload.network.port} upload.network.endpoint_upload={upload.network.endpoint_upload} upload.network.endpoint_sync={upload.network.endpoint_sync} upload.network.endpoint_reset={upload.network.endpoint_reset} upload.network.sync_return={upload.network.sync_return} dummy_boards_property={dummy_boards_property} dummy_boards_local_property={dummy_boards_local_property} dummy_programmer_property={dummy_programmer_property} dummy_platform_property={dummy_platform_property} dummy_platform_local_property={dummy_platform_local_property} dummy_tool_property={dummy_tool_property} dummy_tool_local_property={dummy_tool_local_property} dummy_override_property={dummy_override_property} custom_dummy_preferences_property={custom_dummy_preferences_property}
 
-recipe.hooks.sketch.prebuild.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.sketch.prebuild.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.sketch.postbuild.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.sketch.postbuild.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.libraries.prebuild.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.libraries.prebuild.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.libraries.postbuild.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.libraries.postbuild.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.core.prebuild.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.core.prebuild.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.core.postbuild.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.core.postbuild.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.linking.prelink.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.linking.prelink.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.linking.postlink.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.linking.postlink.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.objcopy.preobjcopy.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.objcopy.preobjcopy.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.objcopy.postobjcopy.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.objcopy.postobjcopy.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.savehex.presavehex.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.savehex.presavehex.1.pattern {tools.dummy_tool.properties_list}
-recipe.hooks.savehex.postsavehex.1.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.hooks.savehex.postsavehex.1.pattern {tools.dummy_tool.properties_list}
-recipe.c.o.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.c.o.pattern {tools.dummy_tool.properties_list}
-recipe.cpp.o.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.cpp.o.pattern {tools.dummy_tool.properties_list}
-recipe.S.o.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.S.o.pattern {tools.dummy_tool.properties_list}
-recipe.ar.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.ar.pattern {tools.dummy_tool.properties_list}
-recipe.c.combine.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.c.combine.pattern {tools.dummy_tool.properties_list}
-recipe.objcopy.eep.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.objcopy.eep.pattern {tools.dummy_tool.properties_list}
-recipe.objcopy.hex.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.objcopy.hex.pattern {tools.dummy_tool.properties_list}
-recipe.size.pattern="{tools.dummy_tool.dummy_cmd}" recipe=recipe.size.pattern {tools.dummy_tool.properties_list}
-recipe.preproc.includes="{tools.dummy_tool.dummy_cmd}" recipe=recipe.preproc.includes {tools.dummy_tool.properties_list}
+recipe.hooks.sketch.prebuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.sketch.prebuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.sketch.postbuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.sketch.postbuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.libraries.prebuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.libraries.prebuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.libraries.postbuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.libraries.postbuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.core.prebuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.core.prebuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.core.postbuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.core.postbuild.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.linking.prelink.1.pattern="{dummy_cmd}" recipe=recipe.hooks.linking.prelink.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.linking.postlink.1.pattern="{dummy_cmd}" recipe=recipe.hooks.linking.postlink.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.objcopy.preobjcopy.1.pattern="{dummy_cmd}" recipe=recipe.hooks.objcopy.preobjcopy.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.objcopy.postobjcopy.1.pattern="{dummy_cmd}" recipe=recipe.hooks.objcopy.postobjcopy.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.savehex.presavehex.1.pattern="{dummy_cmd}" recipe=recipe.hooks.savehex.presavehex.1.pattern {tools.dummy_tool.properties_list}
+recipe.hooks.savehex.postsavehex.1.pattern="{dummy_cmd}" recipe=recipe.hooks.savehex.postsavehex.1.pattern {tools.dummy_tool.properties_list}
+recipe.c.o.pattern="{dummy_cmd}" recipe=recipe.c.o.pattern {tools.dummy_tool.properties_list}
+recipe.cpp.o.pattern="{dummy_cmd}" recipe=recipe.cpp.o.pattern {tools.dummy_tool.properties_list}
+recipe.S.o.pattern="{dummy_cmd}" recipe=recipe.S.o.pattern {tools.dummy_tool.properties_list}
+recipe.ar.pattern="{dummy_cmd}" recipe=recipe.ar.pattern {tools.dummy_tool.properties_list}
+recipe.c.combine.pattern="{dummy_cmd}" recipe=recipe.c.combine.pattern {tools.dummy_tool.properties_list}
+recipe.objcopy.eep.pattern="{dummy_cmd}" recipe=recipe.objcopy.eep.pattern {tools.dummy_tool.properties_list}
+recipe.objcopy.hex.pattern="{dummy_cmd}" recipe=recipe.objcopy.hex.pattern {tools.dummy_tool.properties_list}
+recipe.size.pattern="{dummy_cmd}" recipe=recipe.size.pattern {tools.dummy_tool.properties_list}
+recipe.preproc.includes="{dummy_cmd}" recipe=recipe.preproc.includes {tools.dummy_tool.properties_list}
 
 
 # Using avr-g++ for the library dependency resolution process because mocking this is too difficult.
