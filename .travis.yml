@@ -36,6 +36,38 @@ matrix:
         - codespell --skip="${TRAVIS_BUILD_DIR}/.git" "${TRAVIS_BUILD_DIR}"
 
 
+    # Use the Arduino IDE to compile for each of the boards
+    - name: 'Compilation Test'
+      language: generic
+      install:
+        - git clone https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts/arduino-ci-script"
+        - cd "${HOME}/scripts/arduino-ci-script"
+        # Get new tags from the remote
+        - git fetch --tags
+        # Checkout the latest tag
+        - git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+        - source "${HOME}/scripts/arduino-ci-script/arduino-ci-script.sh"
+
+        # These functions can be used to get verbose output for debugging the script
+        # set_script_verbosity can be set to values from 0 - 2 (verbosity off - maximum verbosity)
+        #- set_script_verbosity 1
+        # Setting set_verbose_output_during_compilation to true is the same as File > Preferences > Show verbose output during > compilation (check) in the Arduino IDE
+        #- set_verbose_output_during_compilation 'true'
+
+        - set_application_folder "${HOME}/arduino-ide"
+        - set_sketchbook_folder "${HOME}/Arduino"
+
+        # Install newest release of the Arduino IDE
+        - install_ide "newest"
+
+        # Install the InoPlatformPropertiesTest boards platform from the repository
+        - install_package
+
+      script:
+        # Compile all example sketches of the libraries bundled with InoPlatformPropertiesTest for the dummy board with all installed versions of the Arduino IDE
+        - build_sketch "${TRAVIS_BUILD_DIR}/dummy_architecture/libraries" 'InoPlatformPropertiesTest:dummy_architecture:dummy_board' 'false' "all"
+
+
 notifications:
   email:
     on_success: always
