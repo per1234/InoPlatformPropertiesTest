@@ -3,6 +3,7 @@ menu.dummy_preferences_property=Dummy Menu
 dummy_board.name=InoPlatformPropertiesTest
 
 dummy_board.upload.tool=dummy_tool
+dummy_board.upload.protocol=dummy_protocol
 
 dummy_board.bootloader.tool=dummy_tool
 
