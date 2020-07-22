@@ -8,6 +8,7 @@ dummy_board.upload.protocol=dummy_protocol
 dummy_board.bootloader.tool=dummy_tool
 
 dummy_board.build.core=dummy_core
+dummy_board.build.variant=dummy_variant
 dummy_board.build.board=DUMMY_ARCHITECTURE_DUMMY_BOARD
 dummy_board.build.mcu=atmega328p
 
