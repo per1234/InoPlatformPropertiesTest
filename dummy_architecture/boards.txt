@@ -1,4 +1,4 @@
-menu.dummy_preferences_property=Dummy Menu
+menu.dummy_menu_id=Dummy Menu Title
 
 dummy_board.name=InoPlatformPropertiesTest
 
@@ -15,5 +15,15 @@ dummy_board.build.mcu=atmega328p
 dummy_board.dummy_boards_property=dummy_boards_property_value
 dummy_board.dummy_override_property=dummy_override_property_value_boards
 
-# this creates a preferences.txt property with a meaningful name
-dummy_board.menu.dummy_preferences_property.dummy_preferences_property_value=Dummy Menu Item
+# Custom board option overrides this, despite the default property's position in the file
+dummy_board.dummy_option_property=dummy_option_property_value_default_1
+
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#custom-board-options
+# When used with the Arduino IDE, the menu selection will be saved to the dummy_option_property property in preferences.txt on exit
+dummy_board.menu.dummy_menu_id.dummy_option_id_1=Dummy Option 1 Text
+dummy_board.menu.dummy_menu_id.dummy_option_id_1.dummy_option_property=dummy_option_property_value_1
+dummy_board.menu.dummy_menu_id.dummy_option_id_2=Dummy Option 2 Text
+dummy_board.menu.dummy_menu_id.dummy_option_id_2.dummy_option_property=dummy_option_property_value_2
+
+# Custom board option overrides this, despite the default property's position in the file
+dummy_board.dummy_option_property=dummy_option_property_value_default_2
