@@ -12,6 +12,8 @@ dummy_board.build.variant=dummy_variant
 dummy_board.build.board=DUMMY_ARCHITECTURE_DUMMY_BOARD
 dummy_board.build.mcu=atmega328p
 
+dummy_board.debug.tool=dummy_debug_tool
+
 dummy_board.dummy_boards_property=dummy_boards_property_value
 dummy_board.dummy_override_property=dummy_override_property_value_boards
 
