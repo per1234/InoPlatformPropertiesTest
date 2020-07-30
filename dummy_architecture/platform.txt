@@ -90,7 +90,7 @@ tools.dummy_tool.program.params.verbose=program_verbose_verbose_option
 tools.dummy_tool.program.params.quiet=program_verbose_quiet_option
 tools.dummy_tool.program.params.verify=program_verify_verify_option
 tools.dummy_tool.program.params.noverify=program_verify_noverify_option
-tools.dummy_tool.program.pattern="{dummy_cmd}" recipe=tools.dummy_tool.program.pattern {properties_list}
+tools.dummy_tool.program.pattern="{dummy_cmd}" recipe=tools.dummy_tool.program.pattern {properties_list} dummy_programmer_property_list={dummy_programmer_property_list}
 
 tools.dummy_tool.erase.params.verbose=erase_verbose_verbose_option
 tools.dummy_tool.erase.params.quiet=erase_verbose_quiet_option
