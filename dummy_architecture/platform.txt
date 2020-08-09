@@ -65,6 +65,7 @@ recipe.c.combine.pattern="{dummy_cmd}" recipe=recipe.c.combine.pattern {properti
 recipe.objcopy.eep.pattern="{dummy_cmd}" recipe=recipe.objcopy.eep.pattern {properties_list}
 recipe.objcopy.hex.pattern="{dummy_cmd}" recipe=recipe.objcopy.hex.pattern {properties_list}
 recipe.size.pattern="{dummy_cmd}" recipe=recipe.size.pattern {properties_list}
+# recipe.preproc.includes is unused from Arduino IDE 1.6.7 onward: https://arduino.github.io/arduino-cli/latest/platform-specification/#recipe-to-run-the-preprocessor
 recipe.preproc.includes="{dummy_cmd}" recipe=recipe.preproc.includes {properties_list}
 
 
