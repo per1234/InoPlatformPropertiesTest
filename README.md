@@ -1,6 +1,6 @@
 InoPlatformPropertiesTest
 ==========
-Dummy [Arduino](https://arduino.cc) hardware package for testing how properties and recipes are handled.
+Dummy [Arduino](https://arduino.cc) hardware package for exploring how properties and recipes are handled.
 
 It can be very difficult to understand the interaction between the compilation and upload recipes, [pre/post build hooks](https://arduino.github.io/arduino-cli/dev/platform-specification/#pre-and-post-build-hooks-since-arduino-ide-165), and properties used by the Arduino hardware package system. This package produces console output that makes this easy to check.
 
@@ -13,19 +13,21 @@ It can be very difficult to understand the interaction between the compilation a
 
 
 ## Usage
-- Tools > Board > InoPlatformPropertiesTest
-- Tools > Programmer > InoPlatformPropertiesTest
-- File > Examples > DummyLibrary > DummyLibraryExample
-- File > Preferences > Show verbose output during: > compilation (check) > upload (check) > OK
+- **Tools > Board > InoPlatformPropertiesTest**
+- **Tools > Programmer > InoPlatformPropertiesTest**
+- **File > Examples > DummyLibrary > DummyLibraryExample**
+- **File > Preferences**
+- Check the boxes next to "Show verbose output during: > compilation" and "upload"
+- Click the "OK" button.
 - Run the process you want to study:
-  - Sketch > Verify/Compile
-  - Sketch > Export Compiled Binary
-  - Sketch > Upload
-  - Sketch > Upload Using Programmer
-  - Tools > Burn Bootloader
+  - **Sketch > Verify/Compile**
+  - **Sketch > Export Compiled Binary**
+  - **Sketch > Upload**
+  - **Sketch > Upload Using Programmer**
+  - **Tools > Burn Bootloader**
 - Examine the contents of the black console window at the bottom of the Arduino IDE window. You may need to scroll up to see it all. The recipe being run is shown, followed by a list of all standardized properties and their values. Refer to the [Arduino Platform Specification](https://arduino.github.io/arduino-cli/dev/platform-specification/) for documentation.
 
-If you want to test the properties associated with [precompiled libraries](https://arduino.github.io/arduino-cli/dev/library-specification/#precompiled-binaries), use **File > Examples > DummyPrecompiledLibrary > DummyPrecompiledLibraryExample**.
+If you want to study the properties associated with [precompiled libraries](https://arduino.github.io/arduino-cli/dev/library-specification/#precompiled-binaries), use **File > Examples > DummyPrecompiledLibrary > DummyPrecompiledLibraryExample**.
 
 
 ## Contributing

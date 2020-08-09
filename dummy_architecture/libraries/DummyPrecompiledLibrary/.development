@@ -1,2 +1,3 @@
-// This file makes the library's examples writable, which is necessary to use Sketch > Export Compiled Binary with them in place.
+// This file intentionally left blank
+// The presence of this file makes the library's examples writable, which is necessary to use Sketch > Export Compiled Binary with them in place.
 // See: https://arduino.github.io/arduino-cli/dev/library-specification/#development-flag-file

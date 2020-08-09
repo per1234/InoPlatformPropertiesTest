@@ -107,14 +107,14 @@ tools.dummy_tool.program.pattern="{dummy_cmd}" recipe=tools.dummy_tool.program.p
 
 tools.dummy_tool.erase.params.verbose=erase_verbose_verbose_option
 tools.dummy_tool.erase.params.quiet=erase_verbose_quiet_option
-# erase.verify is not supported (Arduino CLI @3775f51)
+# At this time (Arduino CLI @3775f51), erase.verify is not supported
 tools.dummy_tool.erase.params.verify=erase_verify_verify_option
 tools.dummy_tool.erase.params.noverify=erase_verify_noverify_option
 tools.dummy_tool.erase.pattern="{dummy_cmd}" recipe=tools.dummy_tool.erase.pattern {properties_list}
 
 tools.dummy_tool.bootloader.params.verbose=bootloader_verbose_verbose_option
 tools.dummy_tool.bootloader.params.quiet=bootloader_verbose_quiet_option
-# bootloader.verify is not supported (Arduino CLI @3775f51)
+# At this time (Arduino CLI @3775f51), bootloader.verify is not supported
 tools.dummy_tool.bootloader.params.verify=bootloader_verify_verify_option
 tools.dummy_tool.bootloader.params.noverify=bootloader_verify_noverify_option
 tools.dummy_tool.bootloader.pattern="{dummy_cmd}" recipe=tools.dummy_tool.bootloader.pattern {properties_list}
