@@ -2,7 +2,7 @@
 # The dummy recipe.preproc.macros causes compilation to fail on IDE versions previous to 1.9.0-beta so the stock recipe must be used for those versions
 
 # For more info:
-# https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
+# https://arduino.github.io/arduino-cli/dev/platform-specification/
 
 name=InoPlatformPropertiesTest
 version=1.0.0
@@ -24,11 +24,13 @@ tools.dummy_tool.dummy_cmd.windows={scripts.path}/dummy_program.bat
 dummy_cmd={tools.dummy_tool.dummy_cmd}
 
 # This default definition is required for precompiled library support. It will be overridden by the builder when compiling a precompiled library.
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#recipes-for-linking
 compiler.libraries.ldflags=
 
 # Used to set the value of the compiler.optimization_flags property according to the optimization setting of the development software:
 # arduino-cli compile --optimize-for-debug
 # (Arduino Pro IDE) Sketch > Optimize for Debugging
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#sketch-debugging-configuration
 compiler.optimization_flags.debug=compiler_optimization_flags_debug_value
 compiler.optimization_flags.release=compiler_optimization_flags_release_value
 
@@ -38,6 +40,8 @@ properties_list={tools.dummy_tool.properties_list}
 # Dedicated recipe to demonstrate visibility of properties in boards.txt
 recipe.hooks.sketch.prebuild.0.pattern="{dummy_cmd}" dummy_board_property_list={dummy_board_property_list}
 
+
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#pre-and-post-build-hooks-since-arduino-ide-165
 recipe.hooks.sketch.prebuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.sketch.prebuild.1.pattern {properties_list}
 recipe.hooks.sketch.postbuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.sketch.postbuild.1.pattern {properties_list}
 recipe.hooks.libraries.prebuild.1.pattern="{dummy_cmd}" recipe=recipe.hooks.libraries.prebuild.1.pattern {properties_list}
@@ -50,6 +54,9 @@ recipe.hooks.objcopy.preobjcopy.1.pattern="{dummy_cmd}" recipe=recipe.hooks.objc
 recipe.hooks.objcopy.postobjcopy.1.pattern="{dummy_cmd}" recipe=recipe.hooks.objcopy.postobjcopy.1.pattern {properties_list}
 recipe.hooks.savehex.presavehex.1.pattern="{dummy_cmd}" recipe=recipe.hooks.savehex.presavehex.1.pattern {properties_list}
 recipe.hooks.savehex.postsavehex.1.pattern="{dummy_cmd}" recipe=recipe.hooks.savehex.postsavehex.1.pattern {properties_list}
+
+
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#build-process
 recipe.c.o.pattern="{dummy_cmd}" recipe=recipe.c.o.pattern {properties_list}
 recipe.cpp.o.pattern="{dummy_cmd}" recipe=recipe.cpp.o.pattern {properties_list}
 recipe.S.o.pattern="{dummy_cmd}" recipe=recipe.S.o.pattern {properties_list}
@@ -70,18 +77,24 @@ preproc.macros.cmd="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {pre
 recipe.preproc.macros="{dummy_preproc_macros_command}" {preproc.macros.cmd} START_PLATFORM_PROPERTIES_LIST recipe=recipe.preproc.macros {properties_list}
 
 
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#recipes-to-export-compiled-binary
 recipe.output.tmp_file={build.project_name}.hex
 recipe.output.save_file={build.project_name}.{build.variant}.hex
 
+
+# https://arduino.github.io/arduino-cli/dev/platform-specification/#recipes-to-compute-binary-sketch-size
 recipe.size.regex=^(?:\.text|\.data|\.bootloader)\s+([0-9]+).*
 recipe.size.regex.data=^(?:\.data|\.bss|\.noinit)\s+([0-9]+).*
 recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 
 
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#tools
 tools.dummy_tool.network_cmd="{dummy_cmd}" recipe=tools.dummy_tool.network_cmd {properties_list}
 
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#verbose-parameter
 tools.dummy_tool.upload.params.verbose=upload_verbose_verbose_option
 tools.dummy_tool.upload.params.quiet=upload_verbose_quiet_option
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#upload-verification
 tools.dummy_tool.upload.params.verify=upload_verify_verify_option
 tools.dummy_tool.upload.params.noverify=upload_verify_noverify_option
 tools.dummy_tool.upload.pattern="{dummy_cmd}" recipe=tools.dummy_tool.upload.pattern {properties_list}
@@ -110,4 +123,6 @@ tools.dummy_tool_remote.upload.pattern="{dummy_cmd}" recipe=tools.dummy_tool_rem
 
 tools.dummy_tool.upload.network_pattern="{dummy_cmd}" recipe=tools.dummy_tool.upload.network_pattern {properties_list}
 
+
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#sketch-debugging-configuration
 tools.dummy_debug_tool.debug.pattern="{dummy_cmd}" recipe=tools.dummy_tool.program.pattern {properties_list}

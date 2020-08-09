@@ -1,2 +1,3 @@
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#boardslocaltxt
 dummy_board.dummy_boards_local_property=dummy_boards_local_property_value
 dummy_board.dummy_override_property=dummy_override_property_value_boards_local

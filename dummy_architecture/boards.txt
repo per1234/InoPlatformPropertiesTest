@@ -1,3 +1,5 @@
+# See: https://arduino.github.io/arduino-cli/dev/platform-specification/#boardstxt
+
 menu.dummy_menu_id=Dummy Menu Title
 
 dummy_board.name=InoPlatformPropertiesTest
