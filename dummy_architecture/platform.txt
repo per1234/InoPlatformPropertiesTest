@@ -5,7 +5,7 @@
 # https://arduino.github.io/arduino-cli/dev/platform-specification/
 
 name=InoPlatformPropertiesTest
-version=1.0.0
+version=1.0.1
 
 
 dummy_platform_property=dummy_platform_property_value
